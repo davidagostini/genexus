@@ -9,7 +9,7 @@
     <Version guid="1fd6d0e1-f884-4be6-ad69-2402a173c226" name="BolaoLoteria" />
   </Source>
   <Objects>
-    <Object parent="Loterias" parentType="00000000-0000-0000-0000-000000000008" parentGuid="f0f3282b-317e-4d70-b739-e2cb259cf95c" user="NBDAVID\Administrator" versionDate="2018-08-08T01:58:41.0000000Z" lastUpdate="2018-08-29T01:30:39.0000000Z" checksum="40bd96d649ec585c71fb2e4f31a93e3f" fullyQualifiedName="PrDebug" moduleGuid="afa47377-41d5-4ae8-9755-6f53150aa361" guid="48625c91-80d1-4b3a-af48-62766ffae3f3" name="PrDebug" type="84a12160-f59b-4ad7-a683-ea4481ac23e9" description="Pr Debug">
+    <Object parent="Loterias" parentType="00000000-0000-0000-0000-000000000008" parentGuid="f0f3282b-317e-4d70-b739-e2cb259cf95c" user="NBDAVID\Administrator" versionDate="2018-08-08T01:58:41.0000000Z" lastUpdate="2018-08-29T01:34:31.0000000Z" checksum="b613621b1a0610df90ebbb2a3eeb90cd" fullyQualifiedName="PrDebug" moduleGuid="afa47377-41d5-4ae8-9755-6f53150aa361" guid="48625c91-80d1-4b3a-af48-62766ffae3f3" name="PrDebug" type="84a12160-f59b-4ad7-a683-ea4481ac23e9" description="Pr Debug">
       <Part type="528d1c06-a9c2-420d-bd35-21dca83f12ff">
         <Source><![CDATA[&Arquivo.SetEmpty()
 &Directory.Source = '.'
@@ -24,7 +24,7 @@ endif
 
 // Grava a linha
 &append = 1 // 1=append 0=not append
-&TxtAuxiliar = ttoc(RetornaDataHora.Udp(),10,8) + ' - ' + &ProgramOrigem.Trim().PadRight(40,space(1)) //+ ' - ' + &Txt.Trim()
+&TxtAuxiliar = ttoc(Now(),10,8) + ' - ' + &ProgramOrigem.Trim().PadRight(40,space(1)) 
 &FlagFile = DFWOpen(&Arquivo, "", "", &append, "UTF8")
 if &FlagFile = 0
 	&FlagFile = DFWPtxt(&TxtAuxiliar)
@@ -135,9 +135,6 @@ endif
     </ObjectIdentity>
     <ObjectIdentity Type="c88fffcd-b6f8-0000-8fec-00b5497e2117" Name="GeneXus" parent="">
       <Guid>4f454e73-7d8f-4a0f-908a-1a355f3634a5</Guid>
-    </ObjectIdentity>
-    <ObjectIdentity Type="84a12160-f59b-4ad7-a683-ea4481ac23e9" Name="RetornaDataHora" parent="">
-      <Guid>d22308f4-c7c1-4dc1-a4fb-ac6f21af2c05</Guid>
     </ObjectIdentity>
     <ObjectIdentity Type="ecececec-dfe0-4a57-ae8f-c6e31b0dcbc0" Name="Default" parent="">
       <Guid>00147e7e-0d48-400c-af38-304aa9270d90</Guid>
